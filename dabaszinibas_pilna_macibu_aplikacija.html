@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dabaszinības — Laikapstākļi un to raksturlielumi</title>
+<style>
+:root{--green:#315f45;--green2:#e9f3e7;--blue:#e8f3fa;--yellow:#fff4c9;--ink:#26352d;--red:#ffe0df;--ok:#dff2df}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#f6f7f2;line-height:1.55}
+header{background:linear-gradient(135deg,#e4f2dc,#ddecf6);padding:26px 16px;text-align:center} h1{color:var(--green);font-size:clamp(28px,5vw,46px);margin:3px} header p{margin:4px;font-size:18px}
+nav{position:sticky;top:0;z-index:5;background:white;padding:9px;display:flex;gap:7px;overflow:auto;box-shadow:0 2px 10px #0001}
+button{border:0;border-radius:13px;padding:10px 14px;font-weight:750;cursor:pointer;font-size:15px}nav button{white-space:nowrap;background:#edf3ef;color:#284c39}
+.wrap{max-width:1000px;margin:auto;padding:17px}.page{display:none}.page.active{display:block}.card{background:#fff;padding:20px;border-radius:20px;margin:14px 0;box-shadow:0 4px 18px #00000010}
+h2{color:var(--green);font-size:28px} h3{color:#3d6d50}.key{background:var(--yellow);padding:14px;border-radius:13px;border-left:6px solid #dcb42e;margin:12px 0}
+.diagram{display:flex;gap:9px;flex-wrap:wrap;align-items:center;justify-content:center;margin:18px 0}.step{background:var(--blue);padding:13px;border-radius:14px;text-align:center}.arrow{font-size:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:13px}.tile{background:white;padding:17px;border-radius:18px;box-shadow:0 3px 12px #0001;text-align:center}.emoji{font-size:58px}
+.book{border-left:5px solid #76a27f;padding-left:14px}.facts li{margin:8px 0}.photo{width:100%;max-height:280px;object-fit:cover;border-radius:16px}
+.pill{display:inline-block;background:#edf4e9;padding:6px 10px;border-radius:999px;margin:3px}.big{font-size:23px;font-weight:800}
+.quiz{background:#fff;padding:22px;border-radius:20px;box-shadow:0 4px 18px #0001}.answers{display:grid;gap:9px;margin:15px 0}.ans{text-align:left;background:#edf3ef;color:#22382b}.ans.correct{background:#cfeacf}.ans.wrong{background:#ffd4d2}
+.feedback{display:none;padding:14px;border-radius:12px;margin:12px 0}.good{background:var(--ok)}.bad{background:var(--red)}
+.progress{height:12px;background:#ddd;border-radius:10px;overflow:hidden}.bar{height:100%;background:#6aa77d;width:0}.small{color:#66736b}.toc button{margin:4px;background:#eaf2e8;color:#2d553e}
+.challenge{background:#f1ecfa}.resultrow{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;padding:8px 0}
+</style></head>
+<body>
+<header><div style="font-size:55px">🌦️</div><h1>Laikapstākļi un to raksturlielumi</h1><p>Mācību aplikācija pēc grāmatas materiāla</p></header>
+<nav>
+<button onclick="go('home')">🏠 Sākums</button><button onclick="go('t1')">🌍 Sasilšana</button><button onclick="go('t2')">💨 Vējš</button><button onclick="go('t3')">☁️ Mākoņi</button><button onclick="go('t4')">🌧️ Nokrišņi</button><button onclick="go('t5')">🔬 Pētījumi</button><button onclick="go('repeat')">🧠 Atkārto</button><button onclick="startQuiz()">🎯 Lielais tests</button>
+</nav><main class="wrap">
+
+<section id="home" class="page active">
+<div class="card"><h2>Ko mēs mācīsimies?</h2><p>Šajā tēmā jāprot paskaidrot, <b>kas raksturo laikapstākļus</b>, kāpēc gaiss sasilst nevienādi, <b>kā rodas vējš</b>, kā veidojas <b>mākoņi un nokrišņi</b> un kā laikapstākļus novēro.</p>
+<div class="grid"><div class="tile"><div class="emoji">🌡️</div><b>Gaisa temperatūra</b></div><div class="tile"><div class="emoji">💨</div><b>Vējš</b></div><div class="tile"><div class="emoji">☁️</div><b>Mākoņu daudzums</b></div><div class="tile"><div class="emoji">🌧️</div><b>Nokrišņi</b></div></div>
+<div class="key"><b>Grāmatas galvenā doma:</b> atmosfērā notiek pastāvīga gaisa pārvietošanās. Atmosfēras stāvokli, ko raksturo gaisa temperatūra, vēja virziens un ātrums, mākoņu daudzums un nokrišņi, sauc par <b>laikapstākļiem</b>.</div>
+<p><b>Meteorologi</b> pēta atmosfēru un tajā notiekošos procesus. <b>Sinoptiķi</b> prognozē laikapstākļus.</p></div>
+<div class="card toc"><h3>Mācies secīgi</h3><button onclick="go('t1')">1. Zemes un gaisa sasilšana →</button><button onclick="go('t2')">2. Vēja rašanās →</button><button onclick="go('t3')">3. Mākoņi →</button><button onclick="go('t4')">4. Nokrišņi →</button><button onclick="go('t5')">5. Praktiskie pētījumi →</button></div>
+</section>
+
+<section id="t1" class="page">
+<div class="card"><h2>🌍 1. Zemes virsma un gaiss sasilst nevienādi</h2>
+<p class="book">Saule nevienmērīgi sasilda Zemes virsmu un atmosfēru, jo <b>Zemes griešanās ass ir slīpa</b>. Tā kā Zeme ir apaļa, dažādi Zemes virsmas apgabali saņem dažādu Saules gaismas un siltuma daudzumu.</p>
+<p>Visvairāk siltuma uz Zemes nonāk ap <b>ekvatoru</b>. Attālinoties no ekvatora, siltuma kļūst arvien mazāk. Vismazāk siltuma saņem apgabali ap <b>poliem</b>.</p>
+<div class="diagram"><div class="step">🧊 Aukstā josla</div><span>→</span><div class="step">🌤️ Mērenā josla</div><span>→</span><div class="step">☀️ Karstā josla<br>EKVATORS</div><span>→</span><div class="step">🌤️ Mērenā josla</div><span>→</span><div class="step">🧊 Aukstā josla</div></div>
+<p>Lai raksturotu siltuma sadalījumu uz Zemes, izmanto <b>piecas siltuma joslas</b>: divas aukstās, divas mērenās un vienu karsto siltuma joslu.</p>
+<div class="key"><b>Gaisa sasilšana ir atkarīga arī no:</b> konkrētās vietas, diennakts daļas, gadalaika, mākoņu daudzuma, Zemes virsmas reljefa un attāluma no ūdenstilpēm.</div></div>
+<div class="card"><h3>🌡️ Gaisa temperatūra un blīvums</h3>
+<p><b>Gaisa sasiluma pakāpi raksturo gaisa temperatūra.</b> Mainoties temperatūrai, mainās arī gaisa blīvums — attālums starp gaisu veidojošajām daļiņām.</p>
+<div class="grid"><div class="tile"><div class="emoji">🔥⬆️</div><h3>Silts gaiss</h3><p>Sasilstot temperatūra palielinās, blīvums samazinās. Siltais gaiss kļūst vieglāks un <b>ceļas augšup</b>.</p></div><div class="tile"><div class="emoji">❄️⬇️</div><h3>Auksts gaiss</h3><p>Atdziestot blīvums palielinās. Aukstais gaiss ir blīvāks un <b>grimst</b> attiecībā pret siltāko gaisu.</p></div></div>
+<p>Tā rodas <b>vertikāla gaisa kustība jeb plūsma</b>, kas izraisa vēja, mākoņu un nokrišņu veidošanos.</p></div>
+</section>
+
+<section id="t2" class="page">
+<div class="card"><h2>💨 2. Kā rodas vējš?</h2>
+<p>Ja kāda Zemes teritorija saņem daudz siltuma, tajā vieglais, siltais gaiss ceļas uz augšu. Tā vietā ieplūst blīvais, smagais aukstais gaiss no vēsākas apkārtnes.</p>
+<div class="diagram"><div class="step">☀️ Zeme sasilst</div><b class="arrow">→</b><div class="step">🔥 siltais gaiss ceļas</div><b class="arrow">→</b><div class="step">❄️ aukstais gaiss ieplūst tā vietā</div><b class="arrow">→</b><div class="step">💨 VĒJŠ</div></div>
+<div class="key">Gaiss vienmēr pārvietojas no vietām, kur tā <b>blīvums ir lielāks</b>, uz vietām, kur tā <b>blīvums ir mazāks</b>. Tā rodas vējš — <b>horizontāla gaisa kustība paralēli Zemes virsmai</b>.</div></div>
+<div class="card"><h3>🧭 Vēja virziens</h3><p>Vējam ir noteikts virziens un ātrums. Vēja virzienu nosaka pēc debespuses, <b>no kuras tas pūš</b>.</p>
+<p>🌬️ <b>Ziemeļu vējš</b> pūš <b>no ziemeļiem</b>. 🌬️ <b>Dienvidu vējš</b> pūš <b>no dienvidiem</b>.</p></div>
+<div class="card"><h3>📏 Vēja ātrums</h3><p>Vēja ātrums raksturo, cik lielu attālumu gaisa plūsma veic laika vienībā. To izsaka <b>metros sekundē (m/s)</b> vai <b>kilometros stundā (km/h)</b>.</p>
+<div class="key">Vēja ātruma un stipruma mērīšanai izmanto <b>anemometru</b>.</div><div class="emoji" style="text-align:center">🌬️🎛️</div></div>
+</section>
+
+<section id="t3" class="page">
+<div class="card"><h2>☁️ 3. Mākoņu veidošanās</h2>
+<p>Mākoņu un nokrišņu veidošanās ir daļa no <b>ūdens aprites jeb riņķojuma dabā</b>. Ūdens nepārtraukti iztvaiko, un gaisā veidojas ūdens tvaiki, kas kopā ar silto gaisu ceļas augšup.</p>
+<div class="diagram"><div class="step">💧 Iztvaiko</div><b class="arrow">→</b><div class="step">⬆️ ūdens tvaiks ceļas</div><b class="arrow">→</b><div class="step">❄️ gaiss atdziest</div><b class="arrow">→</b><div class="step">☁️ pilieni / ledus kristāli</div></div>
+<p>Ja gaiss atdziest <b>tuvu Zemes virsmai</b>, ūdens tvaiks pārvēršas pilienos un kļūst redzams kā <b>migla</b>. Ja atdzišana notiek <b>lielā augstumā</b>, veidojas mākoņi.</p></div>
+<div class="card"><h2>Atšķir trīs mākoņu veidus</h2><div class="grid">
+<div class="tile"><div class="emoji">〰️☁️</div><h3>Spalvmākoņi</h3><p>Gaiši, viegli, balti, atrodas augstu un atgādina putnu spalvas. Veidojas <b>vairāk nekā 6 km</b> augstumā, kur temperatūra ir zemāka par 0 °C. Sastāv no sīkiem ledus kristāliņiem. <b>No spalvmākoņiem nokrišņi neveidojas.</b></p></div>
+<div class="tile"><div class="emoji">☁️☁️☁️</div><h3>Gubmākoņi</h3><p>Lielāki un mazāki gubu formas mākoņi dažādā augstumā. Veidojas karstā laikā, gaisam ātri paceļoties un atdziestot. Var būt balti, pelēki vai zilgani melni. Jo vairāk tajos sakrājas ūdens, jo tumšāki tie kļūst. Tas var liecināt par <b>lietus vai krusas tuvošanos</b>.</p></div>
+<div class="tile"><div class="emoji">🌫️🌫️</div><h3>Slāņmākoņi</h3><p>Vienmērīga balta, zilgana vai pelēka mākoņu sega. No šiem mākoņiem var <b>ilgstoši līt lietus vai snigt sniegs</b>.</p></div>
+</div></div>
+</section>
+
+<section id="t4" class="page">
+<div class="card"><h2>🌧️ 4. Kā veidojas nokrišņi?</h2>
+<p>Mākoņos esošie ūdens pilieni un ledus kristāli pakāpeniski palielinās, kļūst aizvien smagāki, vairs nespēj turēties gaisā un <b>krīt lejā</b>.</p>
+<div class="key big">Nokrišņi ir ūdens, kas šķidrā vai cietā veidā no mākoņiem nonāk atpakaļ uz Zemes.</div>
+<p>Atkarībā no temperatūras gaisa slānī starp mākoni un Zemes virsmu <b>līst lietus vai snieg sniegs</b>.</p>
+<div class="grid"><div class="tile"><div class="emoji">🌧️</div><b>Lietus</b><p>Šķidri nokrišņi.</p></div><div class="tile"><div class="emoji">❄️</div><b>Sniegs</b><p>Cieti nokrišņi, kas saistīti ar zemu temperatūru.</p></div><div class="tile"><div class="emoji">🧊</div><b>Krusa</b><p>Var būt saistīta ar spēcīgi attīstītiem tumšiem gubmākoņiem.</p></div></div>
+</div></section>
+
+<section id="t5" class="page">
+<div class="card"><h2>🔬 5. Pētījums: nosaki vēja virzienu un ātrumu</h2>
+<p><b>Nepieciešamie piederumi:</b> vēja rozes plāksne, kompass, vēja karogs, anemometrs, statīvs.</p>
+<ol class="facts"><li>Uz statīva nostiprini vēja rozes plāksni un vēja karogu.</li><li>Ar kompasu noorientē vēja rozi atbilstoši debespusēm. Ziemeļu (N) un dienvidu (S) simboliem uz kompasa un vēja rozes jāsakrīt.</li><li>Vēro vēja karogu. Vēja karoga stieples loks norāda virzienu, <b>no kura pūš vējš</b>. Nosaki virzienu, izmantojot vēja rozi.</li><li>Vēja ātrumu nosaki ar <b>anemometru</b>.</li><li>Mērījumus veic atkārtoti un rezultātus apkopo tabulā.</li></ol>
+<table><tr><th>Datums</th><th>Vēja virziens</th><th>Vēja ātrums, m/s</th></tr><tr><td>____</td><td>____</td><td>____</td></tr></table>
+<h3>Padomā!</h3><p>❓ Kāpēc nepieciešams kompass? <b>Lai vēja rozi pareizi noorientētu pēc debespusēm.</b></p><p>❓ Kāpēc vēja karogam ir stieples loks? <b>Lai varētu noteikt virzienu, no kura pūš vējš.</b></p></div>
+<div class="card"><h2>🔬 6. Pētījums: novēro laikapstākļus</h2>
+<p>Vismaz vienu nedēļu veic laikapstākļu novērojumus. Nepieciešams <b>termometrs</b> un <b>nokrišņu mērītājs</b>.</p>
+<ol class="facts"><li>Izmēri gaisa temperatūru ar termometru atklātā, ēnainā vietā vismaz <b>0,5 m virs Zemes virsmas</b>.</li><li>Nosaki mākoņu daudzumu un veidu: skaidrs, daļēji mākoņains, mākoņains; spalvmākoņi, gubmākoņi vai slāņmākoņi.</li><li>Nosaki nokrišņu veidu un daudzumu milimetros, izmantojot nokrišņu mērītāju.</li><li>Ja mēri vēju vai novēro īpašas parādības — miglu, negaisu, vētru — papildini tabulu.</li></ol>
+<table><tr><th>Datums</th><th>°C</th><th>Mākoņainums</th><th>Mākoņu veids</th><th>Nokrišņi</th><th>mm</th></tr><tr><td>___</td><td>___</td><td>___</td><td>___</td><td>___</td><td>___</td></tr></table>
+</div></section>
+
+<section id="repeat" class="page">
+<div class="card"><h2>🧠 Pārliecinies, vai izproti!</h2>
+<h3>1. Kā rodas vējš?</h3><p>Dažādi Zemes apgabali sasilst nevienādi. Siltais gaiss kļūst mazāk blīvs un ceļas augšup, bet tā vietā ieplūst blīvāks, vēsāks gaiss. Šī horizontālā gaisa kustība paralēli Zemes virsmai ir vējš.</p>
+<h3>2. Kā veidojas mākoņi un nokrišņi?</h3><p>Ūdens iztvaiko, ūdens tvaiks ar silto gaisu ceļas augšup un atdziest. Tas pārvēršas ūdens pilienos vai ledus kristāliņos un veido mākoņus. Pilieniem un kristāliņiem palielinoties un kļūstot smagiem, tie krīt uz Zemi kā nokrišņi.</p>
+<h3>3. Kāpēc novēro un prognozē laikapstākļus?</h3><p>Laikapstākļu informācija palīdz plānot ikdienu un darbu, pārvietošanos, lauksaimniecību, ceļošanu un sagatavoties bīstamām parādībām, piemēram, negaisam vai vētrai.</p></div>
+<div class="card challenge"><h2>⚡ 30 sekunžu atkārtojums</h2><p><span class="pill">silts gaiss → augšup</span><span class="pill">auksts gaiss → lejup</span><span class="pill">vējš → horizontāla gaisa kustība</span><span class="pill">anemometrs → vēja ātrums</span><span class="pill">migla → atdzišana pie zemes</span><span class="pill">spalvmākoņi → >6 km</span><span class="pill">slāņmākoņi → ilgstoši nokrišņi</span></p><button onclick="startQuiz()" style="background:#315f45;color:white">Sākt lielo testu 🎯</button></div>
+</section>
+
+<section id="quiz" class="page"><div class="quiz">
+<div class="progress"><div id="bar" class="bar"></div></div><p id="count" class="small"></p><h2 id="question"></h2><div id="answers" class="answers"></div><div id="feedback" class="feedback"></div><button id="next" onclick="nextQ()" style="display:none;background:#315f45;color:white">Nākamais jautājums →</button>
+</div></section>
+</main>
+<script>
+const Q=[
+["Kas ir laikapstākļi?",["Atmosfēras stāvoklis, ko raksturo temperatūra, vējš, mākoņi un nokrišņi","Tikai gaisa temperatūra","Gadalaiku maiņa","Zemes virsmas forma"],0,"Laikapstākļi ir atmosfēras stāvoklis. Tos raksturo gaisa temperatūra, vēja virziens un ātrums, mākoņu daudzums un nokrišņi.","Pamati"],
+["Kas pēta atmosfēru un tajā notiekošos procesus?",["Arheologi","Meteorologi","Biologi","Ģeologi"],1,"Atmosfēru un tajā notiekošos procesus pēta meteorologi.","Pamati"],
+["Kas prognozē laikapstākļus?",["Sinoptiķi","Astronomi","Ģeogrāfi","Ķīmiķi"],0,"Grāmatā norādīts: laikapstākļus prognozē sinoptiķi.","Pamati"],
+["Kur uz Zemes nonāk visvairāk Saules siltuma?",["Pie poliem","Ap ekvatoru","Visur vienādi","Tikai pie jūrām"],1,"Visvairāk siltuma nonāk ap ekvatoru; attālinoties no tā, siltuma kļūst mazāk.","Sasilšana"],
+["Kur saņem vismazāk Saules siltuma?",["Ap ekvatoru","Ap poliem","Mērenajā joslā","Pie upēm"],1,"Vismazāk siltuma saņem apgabali ap poliem.","Sasilšana"],
+["Cik siltuma joslas izmanto siltuma sadalījuma raksturošanai?",["3","4","5","7"],2,"Piecas: divas aukstās, divas mērenās un viena karstā siltuma josla.","Sasilšana"],
+["Kurš NAV grāmatā minēts gaisa sasilšanu ietekmējošs faktors?",["Gadalaiks","Mākoņu daudzums","Attālums no ūdenstilpēm","Cilvēku skaits pilsētā"],3,"Grāmatā minēta vieta, diennakts daļa, gadalaiks, mākoņu daudzums, reljefs un attālums no ūdenstilpēm.","Sasilšana"],
+["Kas notiek ar gaisa blīvumu, gaisam sasilstot?",["Palielinās","Samazinās","Nemainās","Pazūd"],1,"Sasilstot gaiss izplešas un tā blīvums samazinās.","Sasilšana"],
+["Kā kustas siltais gaiss?",["Ceļas augšup","Vienmēr grimst","Tikai uz ziemeļiem","Nekustas"],0,"Siltais gaiss ir vieglāks par apkārtējo auksto gaisu un ceļas augšup.","Sasilšana"],
+["Kas notiek ar aukstu gaisu?",["Tas kļūst mazāk blīvs","Tā blīvums palielinās un tas grimst","Tas vienmēr ceļas","Tas kļūst par mākoni"],1,"Atdziestot gaisa blīvums palielinās, tādēļ aukstais gaiss grimst attiecībā pret siltāko.","Sasilšana"],
+["Kas ir vējš?",["Vertikāla ūdens kustība","Horizontāla gaisa kustība paralēli Zemes virsmai","Mākoņu kustība","Saules siltums"],1,"Vējš ir horizontāla gaisa kustība paralēli Zemes virsmai.","Vējš"],
+["Kāpēc rodas vējš?",["Jo siltais un aukstais gaiss ir vienādi blīvi","Jo nevienmērīgas sasilšanas dēļ gaiss pārvietojas starp vietām ar atšķirīgu blīvumu","Jo līst lietus","Jo Zeme ir slapja"],1,"Siltais gaiss ceļas, bet blīvāks aukstais gaiss ieplūst tā vietā.","Vējš"],
+["Ko nozīmē 'ziemeļu vējš'?",["Pūš uz ziemeļiem","Pūš no ziemeļiem","Pūš tikai ziemā","Pūš no dienvidiem"],1,"Vēja nosaukums norāda debespusi, no kuras tas pūš.","Vējš"],
+["Kādās vienībās var izteikt vēja ātrumu?",["°C un mm","m/s vai km/h","kg un g","cm²"],1,"Grāmatā norādīts: metros sekundē vai kilometros stundā.","Vējš"],
+["Ar kuru instrumentu mēra vēja ātrumu?",["Kompasu","Termometru","Anemometru","Nokrišņu mērītāju"],2,"Anemometrs paredzēts vēja ātruma un stipruma mērīšanai.","Vējš"],
+["Kādēļ vēja rozes pētījumā vajadzīgs kompass?",["Lai mērītu temperatūru","Lai pareizi noorientētu vēja rozi pēc debespusēm","Lai mērītu nokrišņus","Lai noteiktu mākoņu augstumu"],1,"Ziemeļu un dienvidu virzieni uz kompasa un vēja rozes jāsakrīt.","Pētījumi"],
+["Ko vēja karoga stieples loks palīdz noteikt?",["Temperatūru","Nokrišņu daudzumu","Virzienu, no kura pūš vējš","Gaisa mitrumu"],2,"Grāmatas pētījumā stieples loks norāda virzienu, no kura pūš vējš.","Pētījumi"],
+["Kas vispirms notiek ūdens aprites posmā, kas ved uz mākoņu veidošanos?",["Ūdens iztvaiko","Snieg sniegs","Veidojas krusa","Pūš ziemeļu vējš"],0,"Ūdens nepārtraukti iztvaiko, un gaisā veidojas ūdens tvaiki.","Mākoņi"],
+["Kas var veidoties, ja ūdens tvaiks atdziest tuvu Zemes virsmai?",["Migla","Spalvmākonis 10 km augstumā","Vējš","Karstā josla"],0,"Tuvu Zemes virsmai tvaiks pārvēršas pilienos un kļūst redzams kā migla.","Mākoņi"],
+["Kas veidojas, ja atdzišana notiek lielā augstumā?",["Tikai vējš","Mākoņi","Reljefs","Ekvators"],1,"Lielā augstumā ūdens tvaiks pārvēršas pilienos vai ledus kristālos un veido mākoņus.","Mākoņi"],
+["Kuri mākoņi atgādina putnu spalvas?",["Gubmākoņi","Slāņmākoņi","Spalvmākoņi","Migla"],2,"Spalvmākoņi ir gaiši, viegli un atgādina putnu spalvas.","Mākoņi"],
+["Aptuveni kādā augstumā veidojas spalvmākoņi?",["Zem 100 m","Vairāk nekā 6 km","Tieši 1 km","Tikai pie Zemes"],1,"Grāmatā teikts, ka spalvmākoņi veidojas vairāk nekā 6 km augstumā.","Mākoņi"],
+["No kā galvenokārt sastāv spalvmākoņi?",["Smiltīm","Sīkiem ledus kristāliņiem","Putekļiem","Lielām lietus lāsēm"],1,"Lielajā augstumā temperatūra ir zem 0 °C, tādēļ tie sastāv no sīkiem ledus kristāliņiem.","Mākoņi"],
+["Vai no spalvmākoņiem veidojas nokrišņi?",["Jā, vienmēr stiprs lietus","Nē","Tikai krusa","Vienmēr sniegs"],1,"Grāmatā tieši norādīts: no spalvmākoņiem nokrišņi neveidojas.","Mākoņi"],
+["Kādos apstākļos bieži veidojas gubmākoņi?",["Karstā laikā, gaisam ātri ceļoties un atdziestot","Tikai naktī","Tikai ziemā pie zemes","Kad gaiss nekustas"],0,"Gubmākoņi bieži veidojas karstā laikā, gaisam strauji paceļoties un atdziestot.","Mākoņi"],
+["Par ko var liecināt tumšāki gubmākoņi?",["Par lietus vai krusas tuvošanos","Par pilnīgi skaidru laiku","Par Saules aptumsumu","Par bezvēju"],0,"Jo vairāk tajos sakrājas ūdens, jo tumšāki mākoņi kļūst; tas var liecināt par lietu vai krusu.","Mākoņi"],
+["Kā izskatās slāņmākoņi?",["Kā atsevišķas spalvas","Kā vienmērīga balta, zilgana vai pelēka mākoņu sega","Vienmēr kā melnas gubas","Tie nav redzami"],1,"Slāņmākoņi klāj debesis kā vienmērīga mākoņu sega.","Mākoņi"],
+["Kādi nokrišņi raksturīgi slāņmākoņiem?",["No tiem nekad nav nokrišņu","Var ilgstoši līt vai snigt","Tikai krusa","Tikai īss negaiss"],1,"No slāņmākoņiem var ilgstoši līt lietus vai snigt sniegs.","Nokrišņi"],
+["Kad mākoņu pilieni vai ledus kristāli sāk krist lejā?",["Kad kļūst pietiekami smagi un vairs nespēj turēties gaisā","Kad Saule lec","Kad pūš tikai ziemeļu vējš","Kad tie kļūst vieglāki"],0,"Pilieni un kristāli palielinās, kļūst smagāki un vairs nespēj turēties gaisā.","Nokrišņi"],
+["Kas ir nokrišņi?",["Ūdens, kas šķidrā vai cietā veidā no mākoņiem nonāk atpakaļ uz Zemes","Tikai lietus","Jebkurš mākonis","Gaisa temperatūras maiņa"],0,"Šī ir grāmatas pamatdefinīcija: nokrišņi ir ūdens šķidrā vai cietā veidā, kas no mākoņiem nonāk uz Zemes.","Nokrišņi"],
+["Kur pareizi mērīt gaisa temperatūru grāmatas pētījumā?",["Saulē uz asfalta","Atklātā, ēnainā vietā vismaz 0,5 m virs Zemes","Istabā pie radiatora","Tieši uz zemes"],1,"Pētījumā norādīts: atklātā, ēnainā vietā, kas atrodas vismaz 0,5 m virs Zemes virsmas.","Pētījumi"],
+["Ar ko nosaka nokrišņu daudzumu?",["Anemometru","Kompasu","Nokrišņu mērītāju","Vēja rozi"],2,"Nokrišņu daudzumu milimetros nosaka ar nokrišņu mērītāju.","Pētījumi"],
+["Kuras īpašās parādības grāmatā minēts pievienot novērojumu tabulai?",["Miglu, negaisu, vētru","Tikai varavīksni","Zemestrīci un vulkānu","Paisumu"],0,"Grāmatā kā piemēri minēti migla, negaiss un vētra.","Pētījumi"]
+];
+let qi=0,score=0,locked=false,stats={};
+function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');scrollTo(0,0)}
+function startQuiz(){qi=0;score=0;locked=false;stats={};go('quiz');render()}
+function render(){locked=false;let x=Q[qi];document.getElementById('bar').style.width=(qi/Q.length*100)+'%';document.getElementById('count').textContent=`Jautājums ${qi+1} no ${Q.length} • Pareizi: ${score}`;document.getElementById('question').textContent=x[0];let a=document.getElementById('answers');a.innerHTML='';x[1].forEach((t,n)=>{let b=document.createElement('button');b.className='ans';b.textContent=t;b.onclick=()=>pick(n,b);a.appendChild(b)});document.getElementById('feedback').style.display='none';document.getElementById('next').style.display='none'}
+function pick(n,b){if(locked)return;locked=true;let x=Q[qi], bs=[...document.querySelectorAll('.ans')],ok=n===x[2];bs[x[2]].classList.add('correct');if(!ok)b.classList.add('wrong');if(!stats[x[4]])stats[x[4]]=[0,0];stats[x[4]][1]++;if(ok){score++;stats[x[4]][0]++}
+let f=document.getElementById('feedback');f.className='feedback '+(ok?'good':'bad');f.innerHTML=(ok?'✅ <b>Pareizi!</b>':'❌ <b>Nav pareizi.</b>')+'<br>'+x[3];f.style.display='block';document.getElementById('next').style.display='inline-block';document.getElementById('count').textContent=`Jautājums ${qi+1} no ${Q.length} • Pareizi: ${score}`}
+function nextQ(){qi++;qi<Q.length?render():finish()}
+function finish(){let pct=Math.round(score/Q.length*100);let rows=Object.entries(stats).map(([k,v])=>`<div class="resultrow"><b>${k}</b><span>${v[0]} / ${v[1]}</span></div>`).join('');document.querySelector('#quiz .quiz').innerHTML=`<div style="text-align:center;font-size:65px">🏆</div><h2>Tests pabeigts!</h2><p class="big">${score} / ${Q.length} — ${pct}%</p><p>${pct>=90?'Izcili! Materiāls apgūts ļoti labi. 🌟':pct>=75?'Ļoti labi! Apskati zemāk, kuru tēmu vēl atkārtot. 👏':pct>=55?'Labs sākums. Atkārto tēmas ar zemāko rezultātu. 💪':'Atgriezies mācību sadaļās un pēc tam mēģini vēlreiz. 📚'}</p><h3>Rezultāts pa tēmām</h3>${rows}<br><button style="background:#315f45;color:white" onclick="location.reload()">Sākt no jauna</button>`}
+</script></body></html>
